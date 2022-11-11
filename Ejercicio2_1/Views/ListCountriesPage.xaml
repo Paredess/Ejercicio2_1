@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    
+         xmlns="http://xamarin.com/schemas/2014/forms"
+         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                       
+         xmlns:Converter="clr-namespace:Ejercicio2_1.Converter"
+         BackgroundColor="#94CEF1"
+         x:Class="Ejercicio2_1.Views.ListCountriesPage">    
+
+        <ContentPage.Resources>
+        <Converter:UrlToImageSourceConverter x:Key="ImageSrcConverter" />
+        </ContentPage.Resources>
+
+        <ContentPage.Content>
+        <ListView 
+         x:Name="lvCountries" 
+         ItemTapped="lvCountries_ItemTapped"  
+         Margin="10,10">
+            
+         <ListView.ItemTemplate>
+         <DataTemplate>
+         <ViewCell>
+         <Frame Padding="5" 
+         BackgroundColor="Azure">
+             
+         <StackLayout 
+        Orientation="Horizontal">                                                             
+
+        <Image WidthRequest="50" 
+        Aspect="Fill" 
+        Source="{Binding flag, Converter={StaticResource ImageSrcConverter}}"/>
+
+        <Label FontAttributes="Bold"
+        FontSize="Subtitle"
+        Text="{Binding name}"/>
+
+        <StackLayout Orientation="Horizontal" 
+          HorizontalOptions="EndAndExpand">
+          <Label FontSize="Body"
+          Text="+" />
+
+          <Label FontSize="Body"
+          Text="{Binding callingCodes[0]}"/>
+
+         </StackLayout>                                
+         </StackLayout>
+         </Frame>
+
+         </ViewCell>
+         </DataTemplate>
+         </ListView.ItemTemplate>
+        </ListView>
+        </ContentPage.Content>
+</ContentPage>

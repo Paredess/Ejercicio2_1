@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_1.MainPage"
+             Title="Mapa Mundi">
+
+    <StackLayout BackgroundColor="#87CAF3">
+        <Frame HeightRequest="200" CornerRadius="10" Padding="0" Margin="10">
+            <Image x:Name="imgBanner"
+               Source="mapamundi.png"
+               Aspect="Fill"/>
+        </Frame>        
+
+        <Picker Title="Seleccione una región"
+                Margin="10"
+                SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>América del Norte</x:String>
+                    <x:String>América del Central</x:String>
+                    <x:String>América del Sur</x:String>
+                    <x:String>Europa</x:String>
+                    <x:String>África</x:String>
+                    <x:String>Asia</x:String>
+                    <x:String>Oceanía</x:String>                    
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Image x:Name="imgRegion"
+               Source=""/>
+
+        <Button x:Name="btnBuscar" 
+                
+                Text="Buscar" 
+                CornerRadius="50"
+                BackgroundColor="#119AEE"
+                Clicked="btnBuscar_Clicked" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="50"/>
+        
+    </StackLayout>
+
+</ContentPage>

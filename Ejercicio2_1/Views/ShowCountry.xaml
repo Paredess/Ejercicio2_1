@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    x:Class="Ejercicio2_1.Views.ShowCountry">    
+
+    <StackLayout VerticalOptions="Center">
+    <Frame CornerRadius="10" 
+    Padding="0">
+    <StackLayout VerticalOptions="CenterAndExpand">
+
+    <Label FontSize="Title"
+    FontAttributes="Bold"
+    Margin="10"
+    Text="{Binding name}"/>                
+
+    <maps:Map x:Name="mapSiteLocation" MapType="Street"  HeightRequest="300">
+    <maps:Map.ItemTemplate>
+    <DataTemplate>
+    <maps:Pin Label="{Binding translations.es}"/>
+    </DataTemplate>
+    </maps:Map.ItemTemplate>
+    </maps:Map>
+
+    <Grid Padding="3">             
+
+    <StackLayout 
+    Grid.Column="0"
+    Grid.Row="0" 
+    Orientation="Horizontal">
+    <Label
+    Text="Nombre Oficial: "
+    FontSize="Subtitle" 
+    FontAttributes="Bold"/>
+    
+    <Label Text="{Binding altSpellings[2]}" FontSize="Body"/>
+    </StackLayout>
+
+    <StackLayout Grid.Column="1"
+    Grid.Row="0" 
+    Orientation="Horizontal">
+    <Label Text="Capital: "
+    FontSize="Subtitle"
+    FontAttributes="Bold"/>
+    <Label Text="{Binding capital}" FontSize="Body"/>
+    </StackLayout>
+
+    <StackLayout Grid.Column="0" 
+    Grid.Row="1" 
+    Orientation="Horizontal">
+    <Label Text="Subregión: "
+    FontSize="Subtitle" 
+    FontAttributes="Bold"/>
+    <Label Text="{Binding subregion}" FontSize="Body"/>
+    </StackLayout>
+
+   <StackLayout 
+   Grid.Column="1"
+   Grid.Row="1" 
+   Orientation="Horizontal">
+   <Label Text="Región: " 
+   FontSize="Subtitle"
+   FontAttributes="Bold"/>
+   <Label Text="{Binding region}" FontSize="Body"/>
+   </StackLayout>
+
+   <StackLayout 
+    Grid.Column="0"
+    Grid.Row="2" 
+    Orientation="Horizontal">
+    <Label Text="Población: "
+    FontSize="Subtitle"
+    FontAttributes="Bold"/>
+    <Label Text="{Binding population}" FontSize="Body"/>
+    </StackLayout>
+
+    <StackLayout 
+    Grid.Column="1" 
+    Grid.Row="2"
+    Orientation="Horizontal">
+    <Label Text="Moneda: " 
+    FontSize="Subtitle"
+    FontAttributes="Bold"/>
+    <Label Text="{Binding currencies[0].name}" FontSize="Body"/>
+    <Label Text="{Binding currencies[0].symbol}" FontSize="Body"/>
+    </StackLayout>
+
+    <StackLayout
+    Grid.Column="0" 
+    Grid.Row="3" 
+    Orientation="Horizontal">
+    <Label Text="Timezone: "
+    FontSize="Subtitle" 
+    FontAttributes="Bold"/>
+    <Label Text="{Binding timezones[0]}" FontSize="Body"/>
+    </StackLayout>
+
+    <StackLayout 
+    Grid.Column="1" 
+    Grid.Row="3" 
+    Orientation="Horizontal">
+    <Label Text="Lenguaje: " 
+    FontSize="Subtitle"
+    FontAttributes="Bold"/>
+    <Label Text="{Binding languages[0].name}" FontSize="Body"/>
+    </StackLayout>
+
+    </Grid> 
+               
+    </StackLayout>
+
+    </Frame>
+    </StackLayout>
+
+</popup:PopupPage>
